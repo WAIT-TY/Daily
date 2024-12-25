@@ -13,8 +13,8 @@
             margin-top: 50px;
         }
         #result-area {
-            margin-top: 20px;
-            padding: 10px;
+            margin-top: 7px; /*缩小为三分之一*/
+            padding: 3.3px; /*缩小为三分之一*/
             border: 1px solid #ccc;
             width: 600px;
             white-space: pre-wrap;
@@ -56,8 +56,8 @@
         }
 
         @keyframes fall {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(var(--fall-x), var(--fall-y)) rotate(var(--fall-rotate));  }
+            0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 1; }
+            100% { transform: translate(var(--fall-x), var(--fall-y)) rotate(var(--fall-rotate));  opacity: 0; }
         }
 
         .shake-animation {
@@ -84,19 +84,21 @@
       }
          #gua-line {
              text-align: center; /* 居中 */
+          margin-bottom: -10px;
         }
 
        #gua-line div {
             display: block; /* 设置为块级元素，占据一行 */
+             margin-bottom: -5px;
         }
-          #gua-line span.yang {
-                color: darkred;
+           #gua-line span.yang {
+              color: darkred;
                 font-weight: bold;
-            }
+           }
 
             #gua-line span.yin {
-                color: black;
-                font-weight: bold;
+               color: black;
+             font-weight: bold;
             }
         @media (max-width: 768px) {
           #result-area {
@@ -113,7 +115,7 @@
         <button id="draw-button">开始抽签</button>
     </div>
     <div id="result-area"></div>
-     <div id="image-container"></div>
+    <div id="image-container"></div>
     <script>
         const drawButtonContainer = document.getElementById('draw-button-container');
         const qiutong = document.getElementById('qiutong');
@@ -157,36 +159,36 @@
                32: ["雷风恒", "(恒卦)", "-- -- — — — --", "保持恒心", "中上卦"],
               33: ["天山遁", "(遁卦)", "— — — — -- --", "明哲保身", "下下卦"],
                34: ["雷天大壮", "(大壮卦)", "-- -- — — — —", "遵守规矩", "中上卦"],
-              35: ["火地晋", "(晋卦)", "— -- — -- -- --", "协同上级", "中上卦"],
+               35: ["火地晋", "(晋卦)", "— -- — -- -- --", "协同上级", "中上卦"],
                 36: ["地火明夷", "(明夷卦)", "-- -- -- — -- —", "摇光养晦", "中下卦"],
                37: ["风火家人", "(家人卦)", "— — -- — -- —", "一天一家", "下下卦"],
-               38: ["火泽睽", "(睽卦)", "— -- — -- — —", "求同存异", "下下卦"],
-                39: ["水山蹇", "(蹇卦)", "-- — -- — -- --", "知难而退", "下下卦"],
-                40: ["雷水解", "(解卦)", "-- -- — -- — --", "解除难局", "中上卦"],
-               41: ["山泽损", "(损卦)", "— -- -- -- — —", "损而有利", "下下卦"],
-                42: ["风雷益", "(益卦)", "— — -- -- -- —", "损上益下", "中上卦"],
+                38: ["火泽睽", "(睽卦)", "— -- — -- — —", "求同存异", "下下卦"],
+               39: ["水山蹇", "(蹇卦)", "-- — -- — -- --", "知难而退", "下下卦"],
+               40: ["雷水解", "(解卦)", "-- -- — -- — --", "解除难局", "中上卦"],
+                41: ["山泽损", "(损卦)", "— -- -- -- — —", "损而有利", "下下卦"],
+               42: ["风雷益", "(益卦)", "— — -- -- -- —", "损上益下", "中上卦"],
                43: ["泽天夬", "(夬卦)", "-- — — — — —", "小人得志", "中下卦"],
                 44: ["天风姤", "(姤卦)", "— — — — — --", "阳气始生", "上中卦"],
                 45: ["泽地萃", "(萃卦)", "-- — — -- -- --", "齐心协力", "中上卦"],
-                46: ["地风升", "(升卦)", "-- -- -- -- — —", "晋升之道", "上上卦"],
+               46: ["地风升", "(升卦)", "-- -- -- -- — —", "晋升之道", "上上卦"],
                47: ["泽水困", "(困卦)", "-- — — -- — --", "身困心亨", "中上卦"],
                48: ["水风井", "(井卦)", "-- — -- — — --", "勤恳服务", "中下卦"],
                49: ["泽火革", "(革卦)", "-- — — — -- —", "改故鼎新", "上上卦"],
                50: ["火风鼎", "(鼎卦)", "— -- — — — --", "建功立业", "中下卦"],
-                51: ["震为雷", "(震卦)", "-- -- — -- -- —", "处变不惊", "中上卦"],
-               52: ["艮为山", "(艮卦)", "— -- -- — -- --", "当止则止", "中下卦"],
-               53: ["风山渐", "(渐卦)", "— — -- — -- --", "循序渐进", "上上卦"],
+               51: ["震为雷", "(震卦)", "-- -- — -- -- —", "处变不惊", "中上卦"],
+                52: ["艮为山", "(艮卦)", "— -- -- — -- --", "当止则止", "中下卦"],
+                53: ["风山渐", "(渐卦)", "— — -- — -- --", "循序渐进", "上上卦"],
                 54: ["雷泽归妹", "(归妹卦)", "-- -- — -- — —", "终则有始", "下下卦"],
                 55: ["雷火丰", "(丰卦)", "-- -- — — -- —", "抓紧做事", "上上卦"],
-               56: ["火山旅", "(旅卦)", "— -- — — -- --", "在外收敛", "下下卦"],
+                56: ["火山旅", "(旅卦)", "— -- — — -- --", "在外收敛", "下下卦"],
                57: ["巽为风", "(巽卦)", "— — -- — — --", "果断行事", "中上卦"],
-                58: ["兑为泽", "(兑卦)", "-- — — -- — —", "性情若水", "上上卦"],
+               58: ["兑为泽", "(兑卦)", "-- — — -- — —", "性情若水", "上上卦"],
                 59: ["风水涣", "(涣卦)", "— — -- -- — --", "先散后聚", "下下卦"],
-               60: ["水泽节", "(节卦)", "-- — -- — — --", "适当节制", "上上卦"],
+                60: ["水泽节", "(节卦)", "-- — -- — — --", "适当节制", "上上卦"],
                61: ["风泽中孚", "(中孚卦)", "— — -- -- — —", "相待以诚", "下下卦"],
                62: ["雷山小过", "(小过卦)", "-- -- — — -- --", "低调为宜", "中上卦"],
-               63: ["水火既济", "(既济卦)", "-- — -- — -- —", "先安后乱", "中上卦"],
-               64: ["火水未济", "(未济卦)", "— -- — -- — --", "新的起点", "中下卦"]
+                63: ["水火既济", "(既济卦)", "-- — -- — -- —", "先安后乱", "中上卦"],
+                64: ["火水未济", "(未济卦)", "— -- — -- — --", "新的起点", "中下卦"]
             };
 
           function drawGua() {
@@ -195,9 +197,9 @@
                 if (Math.random() < 0.3) {
                    const downGua = Object.keys(guaData).filter(key => guaData[key][4].includes("下"))
                   randomKey = downGua[Math.floor(Math.random() * downGua.length)];
-               } else {
+                } else {
                     const notDownGua = Object.keys(guaData).filter(key => !guaData[key][4].includes("下"))
-                    randomKey = notDownGua[Math.floor(Math.random() * notDownGua.length)];
+                   randomKey = notDownGua[Math.floor(Math.random() * notDownGua.length)];
                 }
 
                 const guaInfo = guaData[randomKey];
@@ -208,46 +210,46 @@
                // 格式化输出结果
                return `
                  <div id="gua-line">
-                        <div>${lines[5] === '—' ? yangLine : yinLine}</div>
-                         <div>${lines[4] === '—' ? yangLine : yinLine}</div>
-                        <div>${lines[3] === '—' ? yangLine : yinLine}</div>
-                         <div>${lines[2] === '—' ? yangLine : yinLine}</div>
-                        <div>${lines[1] === '—' ? yangLine : yinLine}</div>
-                         <div>${lines[0] === '—' ? yangLine : yinLine}</div>
+                         <div style="line-height:0.5">${lines[5] === '—' ? yangLine : yinLine}</div>
+                         <div style="line-height:0.5">${lines[4] === '—' ? yangLine : yinLine}</div>
+                        <div style="line-height:0.5">${lines[3] === '—' ? yangLine : yinLine}</div>
+                       <div style="line-height:0.5">${lines[2] === '—' ? yangLine : yinLine}</div>
+                       <div style="line-height:0.5">${lines[1] === '—' ? yangLine : yinLine}</div>
+                       <div style="line-height:0.5">${lines[0] === '—' ? yangLine : yinLine}</div>
                    </div>
                   第${randomKey}卦：${guaInfo[0]}（${guaInfo[1]}）<br>${guaInfo[3]}（${guaInfo[4]}）
                `;
           }
-       drawButtonContainer.addEventListener('click', async () => {
-         qiutong.classList.add('shake-animation');
-          setTimeout(function() {
+        drawButtonContainer.addEventListener('click', async () => {
+          qiutong.classList.add('shake-animation');
+           setTimeout(function() {
               qiutong.classList.remove('shake-animation');
              // 计算随机位置
-               const randomSign = Math.random() < 0.5 ? -1 : 1;
-                const randomX = Math.random() * 50 * randomSign;
+             const randomSign = Math.random() < 0.5 ? -1 : 1;
+              const randomX = Math.random() * 50 * randomSign;
                 const randomY = -10 + Math.random() * 20;
-             const randomRotate = Math.random() * 360
-              qian.style.setProperty('--fall-x', `${randomX}%`);
+              const randomRotate = Math.random() * 360
+               qian.style.setProperty('--fall-x', `${randomX}%`);
              qian.style.setProperty('--fall-y', `${randomY}%`);
-              qian.style.setProperty('--fall-rotate', `${randomRotate}deg`);
-              qian.classList.add('fall-animation');
+            qian.style.setProperty('--fall-rotate', `${randomRotate}deg`);
+             qian.classList.add('fall-animation');
 
-              setTimeout(async function() {
-                qian.classList.remove('fall-animation');
-                qian.style.opacity=1;
-                   qian.style.transform = `translate(${randomX}%, ${randomY}%) rotate(${randomRotate}deg)`;
-                   const data = drawGua();
-                   document.getElementById('result-area').innerHTML = data;
-                  // 获取 result-area 宽度
+               setTimeout(async function() {
+                  qian.classList.remove('fall-animation');
+                  qian.style.opacity=1;
+                    qian.style.transform = `translate(${randomX}%, ${randomY}%) rotate(${randomRotate}deg)`;
+                     const data = drawGua();
+                     document.getElementById('result-area').innerHTML = data;
+                   // 获取 result-area 宽度
                      const resultAreaWidth = resultArea.offsetWidth;
-                   if (data.includes("下")) {
-                     imageContainer.innerHTML = `<img src="static/image1.png" alt="图片1" style="width: ${resultAreaWidth}px; height: auto;">`;
-                   } else {
-                        imageContainer.innerHTML = `<img src="static/image2.png" alt="图片2"  style="width: ${resultAreaWidth}px; height: auto;">`;
-                   }
-               }, 500)
-            }, 500)
-      });
+                    if (data.includes("下")) {
+                        imageContainer.innerHTML = `<img src="static/image1.png" alt="图片1" style="width: ${resultAreaWidth}px; height: auto;">`;
+                     } else {
+                      imageContainer.innerHTML = `<img src="static/image2.png" alt="图片2"  style="width: ${resultAreaWidth}px; height: auto;">`;
+                    }
+              }, 500)
+           }, 500)
+     });
     </script>
 </body>
 </html>
