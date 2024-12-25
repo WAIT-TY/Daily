@@ -75,7 +75,7 @@
         }
      #image-container{
         margin-top: 20px;
-        text-align: center
+         text-align: center
       }
        #image-container img {
           display: block;
@@ -89,12 +89,13 @@
 
        #gua-line div {
             display: block; /* 设置为块级元素，占据一行 */
-             margin-bottom: -5px;
+            margin-bottom: -1px;
+            line-height:0.2;  /* 缩小到 1/5 */
         }
            #gua-line span.yang {
               color: darkred;
                 font-weight: bold;
-           }
+            }
 
             #gua-line span.yin {
                color: black;
@@ -112,10 +113,10 @@
     <div id="draw-button-container">
         <img id="qiutong" src="static/qiutong.png" alt="签筒">
         <img id="qian" src="static/qian.png" alt="签">
-        <button id="draw-button">开始抽签</button>
+         <button id="draw-button">开始抽签</button>
     </div>
     <div id="result-area"></div>
-    <div id="image-container"></div>
+     <div id="image-container"></div>
     <script>
         const drawButtonContainer = document.getElementById('draw-button-container');
         const qiutong = document.getElementById('qiutong');
@@ -148,45 +149,45 @@
                21: ["火雷噬嗑", "(噬嗑卦)", "— -- — -- -- —", "知法守法", "上上卦"],
                 22: ["山火贲", "(贲卦)", "— -- -- — -- —", "以德服人", "中上卦"],
                 23: ["山地剥", "(剥卦)", "— -- -- -- -- --", "置处逆境", "下下卦"],
-                24: ["地雷复", "(复卦)", "-- -- -- -- -- —", "随顺机运", "中上卦"],
-              25: ["天雷无妄", "(无妄卦)", "— — — -- -- —", "不可妄动", "下下卦"],
-              26: ["山天大畜", "(大畜卦)", "— -- -- — — —", "大有积蓄", "中上卦"],
-              27: ["山雷颐", "(颐卦)", "— -- -- -- -- —", "怡情养性", "上上卦"],
+               24: ["地雷复", "(复卦)", "-- -- -- -- -- —", "随顺机运", "中上卦"],
+               25: ["天雷无妄", "(无妄卦)", "— — — -- -- —", "不可妄动", "下下卦"],
+               26: ["山天大畜", "(大畜卦)", "— -- -- — — —", "大有积蓄", "中上卦"],
+               27: ["山雷颐", "(颐卦)", "— -- -- -- -- —", "怡情养性", "上上卦"],
               28: ["泽风大过", "(大过卦)", "-- — — — — --", "物极必反", "中下卦"],
                29: ["坎为水", "(坎卦)", "-- — -- -- — --", "前路坎坷", "下下卦"],
               30: ["离为火", "(离卦)", "— -- — — -- —", "坚守正道", "中上卦"],
-                31: ["泽山咸", "(咸卦)", "-- — — — -- --", "以情感人", "中上卦"],
-               32: ["雷风恒", "(恒卦)", "-- -- — — — --", "保持恒心", "中上卦"],
-              33: ["天山遁", "(遁卦)", "— — — — -- --", "明哲保身", "下下卦"],
+               31: ["泽山咸", "(咸卦)", "-- — — — -- --", "以情感人", "中上卦"],
+                32: ["雷风恒", "(恒卦)", "-- -- — — — --", "保持恒心", "中上卦"],
+               33: ["天山遯", "(遁卦)", "— — — — -- --", "明哲保身", "下下卦"],
                34: ["雷天大壮", "(大壮卦)", "-- -- — — — —", "遵守规矩", "中上卦"],
                35: ["火地晋", "(晋卦)", "— -- — -- -- --", "协同上级", "中上卦"],
                 36: ["地火明夷", "(明夷卦)", "-- -- -- — -- —", "摇光养晦", "中下卦"],
-               37: ["风火家人", "(家人卦)", "— — -- — -- —", "一天一家", "下下卦"],
+                37: ["风火家人", "(家人卦)", "— — -- — -- —", "一天一家", "下下卦"],
                 38: ["火泽睽", "(睽卦)", "— -- — -- — —", "求同存异", "下下卦"],
-               39: ["水山蹇", "(蹇卦)", "-- — -- — -- --", "知难而退", "下下卦"],
+                39: ["水山蹇", "(蹇卦)", "-- — -- — -- --", "知难而退", "下下卦"],
                40: ["雷水解", "(解卦)", "-- -- — -- — --", "解除难局", "中上卦"],
-                41: ["山泽损", "(损卦)", "— -- -- -- — —", "损而有利", "下下卦"],
-               42: ["风雷益", "(益卦)", "— — -- -- -- —", "损上益下", "中上卦"],
-               43: ["泽天夬", "(夬卦)", "-- — — — — —", "小人得志", "中下卦"],
+               41: ["山泽损", "(损卦)", "— -- -- -- — —", "损而有利", "下下卦"],
+                42: ["风雷益", "(益卦)", "— — -- -- -- —", "损上益下", "中上卦"],
+                43: ["泽天夬", "(夬卦)", "-- — — — — —", "小人得志", "中下卦"],
                 44: ["天风姤", "(姤卦)", "— — — — — --", "阳气始生", "上中卦"],
-                45: ["泽地萃", "(萃卦)", "-- — — -- -- --", "齐心协力", "中上卦"],
-               46: ["地风升", "(升卦)", "-- -- -- -- — —", "晋升之道", "上上卦"],
-               47: ["泽水困", "(困卦)", "-- — — -- — --", "身困心亨", "中上卦"],
+               45: ["泽地萃", "(萃卦)", "-- — — -- -- --", "齐心协力", "中上卦"],
+                46: ["地风升", "(升卦)", "-- -- -- -- — —", "晋升之道", "上上卦"],
+                47: ["泽水困", "(困卦)", "-- — — -- — --", "身困心亨", "中上卦"],
                48: ["水风井", "(井卦)", "-- — -- — — --", "勤恳服务", "中下卦"],
                49: ["泽火革", "(革卦)", "-- — — — -- —", "改故鼎新", "上上卦"],
-               50: ["火风鼎", "(鼎卦)", "— -- — — — --", "建功立业", "中下卦"],
+                50: ["火风鼎", "(鼎卦)", "— -- — — — --", "建功立业", "中下卦"],
                51: ["震为雷", "(震卦)", "-- -- — -- -- —", "处变不惊", "中上卦"],
                 52: ["艮为山", "(艮卦)", "— -- -- — -- --", "当止则止", "中下卦"],
                 53: ["风山渐", "(渐卦)", "— — -- — -- --", "循序渐进", "上上卦"],
-                54: ["雷泽归妹", "(归妹卦)", "-- -- — -- — —", "终则有始", "下下卦"],
+               54: ["雷泽归妹", "(归妹卦)", "-- -- — -- — —", "终则有始", "下下卦"],
                 55: ["雷火丰", "(丰卦)", "-- -- — — -- —", "抓紧做事", "上上卦"],
                 56: ["火山旅", "(旅卦)", "— -- — — -- --", "在外收敛", "下下卦"],
-               57: ["巽为风", "(巽卦)", "— — -- — — --", "果断行事", "中上卦"],
+                57: ["巽为风", "(巽卦)", "— — -- — — --", "果断行事", "中上卦"],
                58: ["兑为泽", "(兑卦)", "-- — — -- — —", "性情若水", "上上卦"],
                 59: ["风水涣", "(涣卦)", "— — -- -- — --", "先散后聚", "下下卦"],
                 60: ["水泽节", "(节卦)", "-- — -- — — --", "适当节制", "上上卦"],
                61: ["风泽中孚", "(中孚卦)", "— — -- -- — —", "相待以诚", "下下卦"],
-               62: ["雷山小过", "(小过卦)", "-- -- — — -- --", "低调为宜", "中上卦"],
+                62: ["雷山小过", "(小过卦)", "-- -- — — -- --", "低调为宜", "中上卦"],
                 63: ["水火既济", "(既济卦)", "-- — -- — -- —", "先安后乱", "中上卦"],
                 64: ["火水未济", "(未济卦)", "— -- — -- — --", "新的起点", "中下卦"]
             };
@@ -197,9 +198,9 @@
                 if (Math.random() < 0.3) {
                    const downGua = Object.keys(guaData).filter(key => guaData[key][4].includes("下"))
                   randomKey = downGua[Math.floor(Math.random() * downGua.length)];
-                } else {
-                    const notDownGua = Object.keys(guaData).filter(key => !guaData[key][4].includes("下"))
-                   randomKey = notDownGua[Math.floor(Math.random() * notDownGua.length)];
+               } else {
+                   const notDownGua = Object.keys(guaData).filter(key => !guaData[key][4].includes("下"))
+                  randomKey = notDownGua[Math.floor(Math.random() * notDownGua.length)];
                 }
 
                 const guaInfo = guaData[randomKey];
@@ -208,48 +209,48 @@
                 const lines = guaInfo[2].split("");
 
                // 格式化输出结果
-               return `
-                 <div id="gua-line">
-                         <div style="line-height:0.5">${lines[5] === '—' ? yangLine : yinLine}</div>
-                         <div style="line-height:0.5">${lines[4] === '—' ? yangLine : yinLine}</div>
-                        <div style="line-height:0.5">${lines[3] === '—' ? yangLine : yinLine}</div>
-                       <div style="line-height:0.5">${lines[2] === '—' ? yangLine : yinLine}</div>
-                       <div style="line-height:0.5">${lines[1] === '—' ? yangLine : yinLine}</div>
-                       <div style="line-height:0.5">${lines[0] === '—' ? yangLine : yinLine}</div>
-                   </div>
-                  第${randomKey}卦：${guaInfo[0]}（${guaInfo[1]}）<br>${guaInfo[3]}（${guaInfo[4]}）
+              return `
+                <div id="gua-line">
+                    <div style="line-height:0.2">${lines[5] === '—' ? yangLine : yinLine}</div>
+                    <div style="line-height:0.2">${lines[4] === '—' ? yangLine : yinLine}</div>
+                   <div style="line-height:0.2">${lines[3] === '—' ? yangLine : yinLine}</div>
+                  <div style="line-height:0.2">${lines[2] === '—' ? yangLine : yinLine}</div>
+                   <div style="line-height:0.2">${lines[1] === '—' ? yangLine : yinLine}</div>
+                   <div style="line-height:0.2">${lines[0] === '—' ? yangLine : yinLine}</div>
+               </div>
+               第${randomKey}卦：${guaInfo[0]}（${guaInfo[1]}）<br>${guaInfo[3]}（${guaInfo[4]}）
                `;
           }
         drawButtonContainer.addEventListener('click', async () => {
-          qiutong.classList.add('shake-animation');
+            qiutong.classList.add('shake-animation');
            setTimeout(function() {
               qiutong.classList.remove('shake-animation');
-             // 计算随机位置
-             const randomSign = Math.random() < 0.5 ? -1 : 1;
-              const randomX = Math.random() * 50 * randomSign;
-                const randomY = -10 + Math.random() * 20;
+                // 计算随机位置
+               const randomSign = Math.random() < 0.5 ? -1 : 1;
+               const randomX = Math.random() * 50 * randomSign;
+                 const randomY = -10 + Math.random() * 20;
               const randomRotate = Math.random() * 360
                qian.style.setProperty('--fall-x', `${randomX}%`);
-             qian.style.setProperty('--fall-y', `${randomY}%`);
-            qian.style.setProperty('--fall-rotate', `${randomRotate}deg`);
-             qian.classList.add('fall-animation');
+                qian.style.setProperty('--fall-y', `${randomY}%`);
+               qian.style.setProperty('--fall-rotate', `${randomRotate}deg`);
+               qian.classList.add('fall-animation');
 
                setTimeout(async function() {
-                  qian.classList.remove('fall-animation');
-                  qian.style.opacity=1;
-                    qian.style.transform = `translate(${randomX}%, ${randomY}%) rotate(${randomRotate}deg)`;
-                     const data = drawGua();
-                     document.getElementById('result-area').innerHTML = data;
-                   // 获取 result-area 宽度
-                     const resultAreaWidth = resultArea.offsetWidth;
+                   qian.classList.remove('fall-animation');
+                   qian.style.opacity=1;
+                   qian.style.transform = `translate(${randomX}%, ${randomY}%) rotate(${randomRotate}deg)`;
+                    const data = drawGua();
+                    document.getElementById('result-area').innerHTML = data;
+                    // 获取 result-area 宽度
+                      const resultAreaWidth = resultArea.offsetWidth;
                     if (data.includes("下")) {
-                        imageContainer.innerHTML = `<img src="static/image1.png" alt="图片1" style="width: ${resultAreaWidth}px; height: auto;">`;
-                     } else {
-                      imageContainer.innerHTML = `<img src="static/image2.png" alt="图片2"  style="width: ${resultAreaWidth}px; height: auto;">`;
-                    }
-              }, 500)
-           }, 500)
-     });
+                       imageContainer.innerHTML = `<img src="static/image1.png" alt="图片1" style="width: ${resultAreaWidth}px; height: auto;">`;
+                  } else {
+                        imageContainer.innerHTML = `<img src="static/image2.png" alt="图片2"  style="width: ${resultAreaWidth}px; height: auto;">`;
+                     }
+                }, 500)
+            }, 500)
+       });
     </script>
 </body>
 </html>
